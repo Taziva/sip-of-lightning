@@ -1,0 +1,20 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "Post"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Post",
+      "field": "author"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Post",
+      "field": "authorId"
+    }
+  ]
+}

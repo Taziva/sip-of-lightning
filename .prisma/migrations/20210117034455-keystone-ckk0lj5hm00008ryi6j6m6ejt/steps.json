@@ -1,0 +1,34 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "Post"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Post",
+      "field": "createdAt_utc",
+      "type": "DateTime",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Post",
+      "field": "createdAt_offset",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Post",
+      "field": "author"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Post",
+      "field": "authorId"
+    }
+  ]
+}

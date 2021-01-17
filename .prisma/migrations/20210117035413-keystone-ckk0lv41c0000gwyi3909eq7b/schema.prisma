@@ -1,0 +1,48 @@
+datasource postgresql {
+  url = "***"
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "generated-client"
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  name     String?
+  email    String?  @unique
+  isAdmin  Boolean?
+  password String?
+}
+
+model Post {
+  id                 Int                           @id @default(autoincrement())
+  title              String?
+  state              String?
+  image              Json?
+  summary            String?
+  publishedAt_utc    DateTime?
+  publishedAt_offset String?
+  slug               String?                       @unique
+  updatedAt_utc      DateTime?
+  updatedAt_offset   String?
+  createdAt_utc      DateTime?
+  createdAt_offset   String?
+  content            KS__ContentType_Post_content? @relation("KS__ContentType_Post_contentfrom")
+  categories         PostCategory[]                @relation("Post_categories_many", references: [id])
+}
+
+model KS__ContentType_Post_content {
+  id       Int     @id @default(autoincrement())
+  document String?
+  from     Post?   @relation("KS__ContentType_Post_contentfrom", fields: [fromId], references: [id])
+  fromId   Int?    @map("from")
+}
+
+model PostCategory {
+  id              Int     @id @default(autoincrement())
+  name            String?
+  slug            String? @unique
+  from_categories Post[]  @relation("Post_categories_many", references: [id])
+}

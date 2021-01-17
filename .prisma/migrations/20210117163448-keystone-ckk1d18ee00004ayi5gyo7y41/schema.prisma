@@ -1,0 +1,67 @@
+datasource postgresql {
+  url = "***"
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "generated-client"
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  name     String?
+  email    String?  @unique
+  isAdmin  Boolean?
+  password String?
+  Post     Post[]   @relation("Postauthor")
+}
+
+model Post {
+  id                 Int            @id @default(autoincrement())
+  title              String?
+  state              String?
+  image              Json?
+  content            String?
+  summary            String?
+  publishedAt_utc    DateTime?
+  publishedAt_offset String?
+  slug               String?        @unique
+  updatedAt_utc      DateTime?
+  updatedAt_offset   String?
+  createdAt_utc      DateTime?
+  createdAt_offset   String?
+  author             User?          @relation("Postauthor", fields: [authorId], references: [id])
+  authorId           Int?           @map("author")
+  categories         PostCategory[] @relation("Post_categories_many", references: [id])
+}
+
+model PostCategory {
+  id              Int     @id @default(autoincrement())
+  name            String?
+  slug            String? @unique
+  from_categories Post[]  @relation("Post_categories_many", references: [id])
+}
+
+model Donut {
+  id                 Int              @id @default(autoincrement())
+  title              String?
+  state              String?
+  publishedAt_utc    DateTime?
+  publishedAt_offset String?
+  image              Json?
+  updatedAt_utc      DateTime?
+  updatedAt_offset   String?
+  createdAt_utc      DateTime?
+  createdAt_offset   String?
+  spotifyPlaylist    SpotifyPlaylist? @relation("DonutspotifyPlaylist", fields: [spotifyPlaylistId], references: [id])
+  spotifyPlaylistId  Int?             @map("spotifyPlaylist")
+}
+
+model SpotifyPlaylist {
+  id    Int     @id @default(autoincrement())
+  title String?
+  uri   String?
+  uid   String?
+  Donut Donut[] @relation("DonutspotifyPlaylist")
+}

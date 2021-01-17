@@ -1,0 +1,248 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateModel",
+      "model": "Donut"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Donut",
+      "field": "id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Donut",
+          "field": "id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Donut",
+          "field": "id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Donut",
+          "field": "id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Donut",
+      "field": "title",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Donut",
+      "field": "state",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Donut",
+      "field": "publishedAt_utc",
+      "type": "DateTime",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Donut",
+      "field": "publishedAt_offset",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Donut",
+      "field": "image",
+      "type": "Json",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Donut",
+      "field": "updatedAt_utc",
+      "type": "DateTime",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Donut",
+      "field": "updatedAt_offset",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Donut",
+      "field": "createdAt_utc",
+      "type": "DateTime",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Donut",
+      "field": "createdAt_offset",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Donut",
+      "field": "spotifyPlaylist",
+      "type": "SpotifyPlaylist",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Donut",
+          "field": "spotifyPlaylist"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Donut",
+          "field": "spotifyPlaylist"
+        },
+        "directive": "relation"
+      },
+      "argument": "",
+      "value": "\"DonutspotifyPlaylist\""
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Donut",
+          "field": "spotifyPlaylist"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[spotifyPlaylistId]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Donut",
+          "field": "spotifyPlaylist"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Donut",
+      "field": "spotifyPlaylistId",
+      "type": "Int",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Donut",
+          "field": "spotifyPlaylistId"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Donut",
+          "field": "spotifyPlaylistId"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"spotifyPlaylist\""
+    },
+    {
+      "tag": "DeleteModel",
+      "model": "WeeklyDonut"
+    },
+    {
+      "tag": "CreateField",
+      "model": "SpotifyPlaylist",
+      "field": "Donut",
+      "type": "Donut",
+      "arity": "List"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "SpotifyPlaylist",
+          "field": "Donut"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "SpotifyPlaylist",
+          "field": "Donut"
+        },
+        "directive": "relation"
+      },
+      "argument": "",
+      "value": "\"DonutspotifyPlaylist\""
+    },
+    {
+      "tag": "DeleteField",
+      "model": "SpotifyPlaylist",
+      "field": "WeeklyDonut"
+    }
+  ]
+}

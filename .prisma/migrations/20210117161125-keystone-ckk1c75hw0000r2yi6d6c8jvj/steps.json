@@ -1,0 +1,300 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateModel",
+      "model": "WeeklyDonut"
+    },
+    {
+      "tag": "CreateField",
+      "model": "WeeklyDonut",
+      "field": "id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "WeeklyDonut",
+          "field": "id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "WeeklyDonut",
+          "field": "id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "WeeklyDonut",
+          "field": "id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "WeeklyDonut",
+      "field": "title",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "WeeklyDonut",
+      "field": "state",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "WeeklyDonut",
+      "field": "publishedAt_utc",
+      "type": "DateTime",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "WeeklyDonut",
+      "field": "publishedAt_offset",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "WeeklyDonut",
+      "field": "image",
+      "type": "Json",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "WeeklyDonut",
+      "field": "updatedAt_utc",
+      "type": "DateTime",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "WeeklyDonut",
+      "field": "updatedAt_offset",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "WeeklyDonut",
+      "field": "createdAt_utc",
+      "type": "DateTime",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "WeeklyDonut",
+      "field": "createdAt_offset",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "WeeklyDonut",
+      "field": "spotifyPlaylist",
+      "type": "SpotifyPlaylist",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "WeeklyDonut",
+          "field": "spotifyPlaylist"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "WeeklyDonut",
+          "field": "spotifyPlaylist"
+        },
+        "directive": "relation"
+      },
+      "argument": "",
+      "value": "\"WeeklyDonutspotifyPlaylist\""
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "WeeklyDonut",
+          "field": "spotifyPlaylist"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[spotifyPlaylistId]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "WeeklyDonut",
+          "field": "spotifyPlaylist"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
+      "tag": "CreateField",
+      "model": "WeeklyDonut",
+      "field": "spotifyPlaylistId",
+      "type": "Int",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "WeeklyDonut",
+          "field": "spotifyPlaylistId"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "WeeklyDonut",
+          "field": "spotifyPlaylistId"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"spotifyPlaylist\""
+    },
+    {
+      "tag": "CreateModel",
+      "model": "SpotifyPlaylist"
+    },
+    {
+      "tag": "CreateField",
+      "model": "SpotifyPlaylist",
+      "field": "id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "SpotifyPlaylist",
+          "field": "id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "SpotifyPlaylist",
+          "field": "id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "SpotifyPlaylist",
+          "field": "id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "SpotifyPlaylist",
+      "field": "uri",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "SpotifyPlaylist",
+      "field": "uid",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "SpotifyPlaylist",
+      "field": "WeeklyDonut",
+      "type": "WeeklyDonut",
+      "arity": "List"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "SpotifyPlaylist",
+          "field": "WeeklyDonut"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "SpotifyPlaylist",
+          "field": "WeeklyDonut"
+        },
+        "directive": "relation"
+      },
+      "argument": "",
+      "value": "\"WeeklyDonutspotifyPlaylist\""
+    }
+  ]
+}

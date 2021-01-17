@@ -1,0 +1,26 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "DeleteModel",
+      "model": "KS__ContentType_Post_content"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Post",
+      "field": "content",
+      "type": "String"
+    },
+    {
+      "tag": "DeleteDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Post",
+          "field": "content"
+        },
+        "directive": "relation"
+      }
+    }
+  ]
+}
